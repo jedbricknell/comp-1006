@@ -1,0 +1,13 @@
+<?php
+    $conn = mysqli_connect("localhost:8889", "root", root, "lesson_03");
+?>
+
+<!DOCTYPE html>
+    <head>
+        <title>Document</title>
+    </head>
+
+    <body>
+
+    </body>
+</html>
