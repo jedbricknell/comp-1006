@@ -1,5 +1,9 @@
 <?php
-    $conn = mysqli_connect("localhost;8889", "root", root, "lesson_03");
+    include('./.env.php');
+    // This is my connection string
+    $conn=mysqli_connect(getenv('DB_HOST'),getenv('DB_USER'),getenv('DB_PASS'),
+    getenv('DB'));
+    
     var_dump($_POST);
 
     $sql = "INSERT INTO countries (

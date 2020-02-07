@@ -1,6 +1,9 @@
 <?php
-    $conn = mysqli_connect("localhost", "root", root, "lesson_03");
-
+    include('./.env.php');
+    // This is my connection string
+    $conn=mysqli_connect(getenv('DB_HOST'),getenv('DB_USER'),getenv('DB_PASS'),
+    getenv('DB'));
+    
     $result = mysqli_query($conn, "SELECT * FROM countries");
     $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
     var_dump($rows); 
@@ -37,9 +40,9 @@
                         echo "<td>{$row['description']}</td>";
                         echo "<td>{$row['population']}</td>";
                         echo "<td>";
-                        echo "<a href='./edit.php?id={$row['id']}>edit</a>;"
-                        ech0 " | ";
-                        echo "<a href='./delete.php?id={$row['id']}>delete</a>;"
+                        echo "<a href='./edit.php?id={$row['id']}>edit</a>";
+                        echo " | " ;
+                        echo "<a href='./delete.php?id={$row['id']}>delete</a>";
                         echo "</td>";
                         echo "</tr>";
                     }
